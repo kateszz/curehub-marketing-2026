@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CUREHUB DESIGN TOKENS
+   Extracted from the original Webflow export (Client-First token system).
+   These map 1:1 onto Tailwind utility classes via the @theme block below —
+   e.g. --color-brand-500 gives you bg-brand-500 / text-brand-500 / etc,
+   --text-h1 gives you the `text-h1` utility, --spacing-gutter gives you
+   `px-gutter`, and so on.
+
+   See /DESIGN_SYSTEM.md at the project root for the full reference sheet.
+   ========================================================================== */
+
+@theme {
+  /* ---- Typefaces --------------------------------------------------- */
+  --font-sans: var(--font-epilogue), Arial, sans-serif; /* body copy */
+  --font-display: var(--font-syne), Arial, sans-serif; /* headings, buttons, eyebrows */
+
+  /* ---- Color: brand blue scale (derived from the single #2f62ed
+     brand color via color-mix, exactly as the source site does) ----- */
+  --color-brand-100: color-mix(in srgb, var(--color-brand-500), white 80%);
+  --color-brand-200: color-mix(in srgb, var(--color-brand-500), white 60%);
+  --color-brand-300: color-mix(in srgb, var(--color-brand-500), white 40%);
+  --color-brand-400: color-mix(in srgb, var(--color-brand-500), white 20%);
+  --color-brand-500: #2f62ed;
+  --color-brand-600: color-mix(in srgb, var(--color-brand-500), black 20%);
+  --color-brand-700: color-mix(in srgb, var(--color-brand-500), black 40%);
+  --color-brand-800: color-mix(in srgb, var(--color-brand-500), black 60%);
+  --color-brand-900: color-mix(in srgb, var(--color-brand-500), black 80%);
+
+  /* ---- Color: neutrals + accent ------------------------------------ */
+  --color-ink: #14022e; /* near-black text / dark section background */
+  --color-snow: #f5f2fc; /* near-white background / light text-on-dark */
+  --color-glow: #c2b1ff; /* lavender accent used for highlights + glows */
+
+  /* ---- Fluid type scale (clamps between a 320px and 1440px viewport,
+     identical formulas to the source site's fluid type system) ------- */
+  --text-body-sm: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  --text-body: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+  --text-body-lg: clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem);
+  --text-h6: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+  --text-h5: clamp(1.375rem, 1.3393rem + 0.1786vw, 1.5rem);
+  --text-h4: clamp(1.75rem, 1.6786rem + 0.3571vw, 2rem);
+  --text-h3: clamp(2.25rem, 2.0357rem + 1.0714vw, 3rem);
+  --text-h2: clamp(2.5rem, 2.0714rem + 2.1429vw, 4rem);
+  --text-h1: clamp(3rem, 2.4286rem + 2.8571vw, 5rem);
+  --text-display: clamp(4rem, 3.1429rem + 4.2857vw, 7rem);
+
+  /* ---- Fluid spacing scale ------------------------------------------
+     NOTE: these are namespaced "fluid-xs", "fluid-sm" etc, not bare
+     "xs"/"sm"/"lg"/"3xl", very deliberately. Tailwind v4 resolves named
+     max-width and width sizes (max-w-3xl, max-w-xl, ...) through this
+     same spacing theme namespace, so a bare --spacing-3xl here would
+     silently hijack the built-in max-w-3xl utility (48rem) and any other
+     similarly-named sizing utility, replacing it with this small
+     gap/padding value instead. Keeping our custom scale under a distinct
+     "fluid" prefix avoids that clash entirely, so max-w-xl, max-w-3xl
+     etc keep working normally. ---------------------------------------- */
+  --spacing-fluid-xs: clamp(0.375rem, 0.3393rem + 0.1786vw, 0.5rem);
+  --spacing-fluid-sm: clamp(0.625rem, 0.5893rem + 0.1786vw, 0.75rem);
+  --spacing-fluid-md: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  --spacing-fluid-lg: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+  --spacing-fluid-xl: clamp(1.75rem, 1.6786rem + 0.3571vw, 2rem);
+  --spacing-fluid-2xl: clamp(2rem, 1.8571rem + 0.7143vw, 2.5rem);
+  --spacing-fluid-3xl: clamp(2.25rem, 2.0357rem + 1.0714vw, 3rem);
+  --spacing-fluid-4xl: clamp(2.5rem, 2.0714rem + 2.1429vw, 4rem);
+
+  /* Section (vertical) rhythm */
+  --spacing-section-sm: clamp(3rem, 2.4286rem + 2.8571vw, 5rem);
+  --spacing-section-md: clamp(4rem, 3.1429rem + 4.2857vw, 7rem);
+  --spacing-section-lg: clamp(5.5rem, 4.2143rem + 6.4286vw, 10rem);
+  --spacing-section-top: clamp(10rem, 8.8571rem + 5.7143vw, 14rem);
+
+  /* Page gutter (horizontal edge padding) */
+  --spacing-gutter: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
+
+  /* ---- Radius --------------------------------------------------------- */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+}
+
+/* Plain CSS custom properties (deliberately outside @theme): these are only
+   ever read via var() — a page-width clamp and the fixed navbar's height —
+   and were never meant to generate their own Tailwind utilities, so they
+   live outside Tailwind's theme namespace to rule out any future name
+   collision like the one described above. */
+:root {
+  --container-page: 90rem; /* 1440px, matches the source site's max container width */
+  --nav-height: 4rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-ink);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-snow);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Shared page container: centers content, clamps to the 1440px
+     design width, and applies the fluid side gutter. */
+  .container-page {
+    width: 100%;
+    max-width: var(--container-page);
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+}
