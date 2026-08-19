@@ -38,7 +38,7 @@ export function SectionHeading({
       </Reveal>
       {description && (
         <Reveal delay={0.16}>
-          <p className={cn("text-body-lg max-w-2xl text-ink/70", align === "center" && "mx-auto")}>
+          <p className={cn("text-body-lg max-w-2xl text-snow/70", align === "center" && "mx-auto")}>
             {description}
           </p>
         </Reveal>

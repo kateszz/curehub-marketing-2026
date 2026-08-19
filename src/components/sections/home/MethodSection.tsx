@@ -12,7 +12,7 @@ const STEPS = [
 
 export function MethodSection() {
   return (
-    <section className="py-section-md">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-2xl">
         <Reveal>
           <Eyebrow>The Curehub Method</Eyebrow>
@@ -24,7 +24,7 @@ export function MethodSection() {
           </h2>
         </Reveal>
         <Reveal delay={0.16} direction="left">
-          <p className="text-body-lg max-w-xl self-end text-ink/70">
+          <p className="text-body-lg max-w-xl self-end text-snow/70">
             Curehub AI traces back how your biology is wired and uses that
             knowledge to empower you with actionable insights. All it needs is
             a raw DNA file to:
@@ -34,7 +34,7 @@ export function MethodSection() {
         <div className="mt-fluid-lg grid grid-cols-1 gap-fluid-lg md:grid-cols-2">
           {STEPS.map((step, i) => (
             <Reveal key={step.verb} delay={i * 0.06}>
-              <div className="flex items-start gap-fluid-lg rounded-md border border-ink/10 bg-white/40 p-fluid-xl">
+              <div className="flex items-center gap-fluid-lg border border-snow/10 bg-snow/5 p-fluid-xl">
                 <span className="font-display text-h4 text-brand-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -47,7 +47,7 @@ export function MethodSection() {
         </div>
 
         <Reveal delay={0.3}>
-          <p className="text-body-lg max-w-xl text-ink/70">
+          <p className="text-body-lg max-w-xl text-snow/70">
             Learn which nutritional &lsquo;raw materials&rsquo; your body benefits
             from and explore personalised daily guidance shaped around your
             unique biology.

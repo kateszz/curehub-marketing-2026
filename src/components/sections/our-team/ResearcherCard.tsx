@@ -3,7 +3,7 @@ import type { Researcher } from "@/lib/sanity/types";
 
 export function ResearcherCard({ researcher }: { researcher: Researcher }) {
   return (
-    <div className="flex h-full flex-col gap-fluid-lg rounded-md border border-ink/10 bg-white/40 p-fluid-lg">
+    <div className="flex h-full flex-col gap-fluid-lg rounded-md border border-snow/10 bg-snow/5 p-fluid-lg">
       <div className="relative aspect-square w-full overflow-hidden rounded-sm">
         <SanityImg
           image={researcher.image}
@@ -20,13 +20,13 @@ export function ResearcherCard({ researcher }: { researcher: Researcher }) {
             {researcher.academicTitle}
           </p>
         </div>
-        <p className="text-body-sm text-ink/70">{researcher.background}</p>
+        <p className="text-body-sm text-snow/70">{researcher.background}</p>
         {researcher.keyAchievements && researcher.keyAchievements.length > 0 && (
           <ul className="flex flex-col gap-fluid-xs">
             {researcher.keyAchievements.map((achievement) => (
               <li
                 key={achievement}
-                className="flex gap-fluid-sm text-body-sm text-ink/70"
+                className="flex gap-fluid-sm text-body-sm text-snow/70"
               >
                 <span className="text-brand-500" aria-hidden="true">
                   &bull;
@@ -37,8 +37,8 @@ export function ResearcherCard({ researcher }: { researcher: Researcher }) {
           </ul>
         )}
         {researcher.contribution && (
-          <p className="border-t border-ink/10 pt-fluid-md text-body-sm text-ink/70">
-            <strong className="text-ink">Contribution to Curehub: </strong>
+          <p className="border-t border-snow/10 pt-fluid-md text-body-sm text-snow/70">
+            <strong className="text-snow">Contribution to Curehub: </strong>
             {researcher.contribution}
           </p>
         )}

@@ -76,7 +76,7 @@ export function StepList({
     <div className={cn("grid grid-cols-1 gap-fluid-lg md:grid-cols-2", className)}>
       {steps.map((step, i) => (
         <Reveal key={i} delay={i * 0.06}>
-          <div className="flex h-full items-start gap-fluid-lg rounded-md border border-snow/10 bg-snow/5 p-fluid-xl">
+          <div className="flex h-full items-center gap-fluid-lg border border-snow/10 bg-snow/5 p-fluid-xl">
             <span className="font-display text-h4 text-brand-300">
               {String(i + 1).padStart(2, "0")}
             </span>

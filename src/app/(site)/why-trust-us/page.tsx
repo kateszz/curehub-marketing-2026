@@ -18,7 +18,7 @@ export default function WhyTrustUsPage() {
         eyebrow="Why Trust Us"
         title={
           <>
-            <span className="text-glow">Trust</span> Begins With Your DNA
+            <span className="text-glow">Trust</span> Begins With <i>Scientific Rigor</i>
           </>
         }
         description={
@@ -30,13 +30,12 @@ export default function WhyTrustUsPage() {
               height={20}
               className="mt-1 size-5 shrink-0"
             />
-            At Curehub, your genetic blueprint is treated with the highest
-            standard of scientific integrity and data privacy.
+           At Curehub, biological insight is built through multidisciplinary research, clinical expertise, responsible AI, and uncompromising data protection.
           </span>
         }
       />
       <ScienceFoundationSection />
-      <PrivacySection />
+
       <ContactSection />
     </>
   );

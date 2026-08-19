@@ -32,7 +32,7 @@ const GDPR_HIPAA_PRACTICES = [
 
 export function PrivacySection() {
   return (
-    <section className="bg-snow py-section-md text-ink">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-4xl">
         <div className="flex flex-col gap-fluid-2xl">
           <Reveal>
@@ -61,11 +61,11 @@ export function PrivacySection() {
           <div className="flex flex-col">
             {GDPR_HIPAA_PRACTICES.map((practice, i) => (
               <Reveal key={practice.title} delay={i * 0.06}>
-                <div className="flex flex-col gap-fluid-sm border-b border-ink/10 py-fluid-xl sm:flex-row sm:items-baseline sm:justify-between sm:gap-fluid-3xl">
+                <div className="flex flex-col gap-fluid-sm border-b border-snow/10 py-fluid-xl sm:flex-row sm:items-baseline sm:justify-between sm:gap-fluid-3xl">
                   <span className="text-h6 shrink-0 font-medium sm:w-1/3">
                     {practice.title}
                   </span>
-                  <p className="text-body text-ink/70 sm:w-2/3">
+                  <p className="text-body text-snow/70 sm:w-2/3">
                     {practice.description}
                   </p>
                 </div>

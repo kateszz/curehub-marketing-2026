@@ -53,7 +53,7 @@ const STEPS: Step[] = [
 /** The three-step "How it works" walkthrough on the Our Product page. */
 export function HowItWorksSection() {
   return (
-    <section className="py-section-md">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-2xl">
         <Reveal>
           <Eyebrow>The Process</Eyebrow>
@@ -65,7 +65,7 @@ export function HowItWorksSection() {
         <div className="mt-fluid-lg flex flex-col gap-fluid-lg">
           {STEPS.map((step, i) => (
             <Reveal key={step.label} delay={i * 0.08}>
-              <div className="grid grid-cols-1 gap-fluid-lg rounded-md border border-ink/10 bg-white/40 p-fluid-xl lg:grid-cols-[auto_1fr] lg:gap-fluid-2xl lg:p-fluid-2xl">
+              <div className="grid grid-cols-1 gap-fluid-lg rounded-md border border-snow/10 bg-snow/5 p-fluid-xl lg:grid-cols-[auto_1fr] lg:gap-fluid-2xl lg:p-fluid-2xl">
                 <span className="font-display text-h4 text-brand-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -73,20 +73,20 @@ export function HowItWorksSection() {
                   <h3 className="text-h4">
                     <strong>{step.label}:</strong> {step.title}
                     {step.duration && (
-                      <span className="ml-fluid-sm text-body-sm font-sans font-normal text-ink/50">
+                      <span className="ml-fluid-sm text-body-sm font-sans font-normal text-snow/50">
                         ⏱ {step.duration}
                       </span>
                     )}
                   </h3>
-                  <p className="text-body-lg text-ink/70">{step.summary}</p>
+                  <p className="text-body-lg text-snow/70">{step.summary}</p>
 
                   {(step.detailIntro || step.detailList) && (
-                    <div className="mt-fluid-sm flex flex-col gap-fluid-sm border-t border-ink/10 pt-fluid-lg">
+                    <div className="mt-fluid-sm flex flex-col gap-fluid-sm border-t border-snow/10 pt-fluid-lg">
                       {step.detailIntro && (
-                        <p className="text-body text-ink/60">{step.detailIntro}</p>
+                        <p className="text-body text-snow/60">{step.detailIntro}</p>
                       )}
                       {step.detailList && (
-                        <ul className="flex flex-col gap-fluid-xs text-body text-ink/70">
+                        <ul className="flex flex-col gap-fluid-xs text-body text-snow/70">
                           {step.detailList.map((item) => (
                             <li key={item} className="flex gap-fluid-sm">
                               <span className="text-brand-500">&bull;</span>
@@ -96,7 +96,7 @@ export function HowItWorksSection() {
                         </ul>
                       )}
                       {step.detailClosing && (
-                        <p className="text-body-sm text-ink/50">{step.detailClosing}</p>
+                        <p className="text-body-sm text-snow/50">{step.detailClosing}</p>
                       )}
                     </div>
                   )}

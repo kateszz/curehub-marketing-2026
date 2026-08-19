@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 export default function ForPartnersPage() {
   return (
     <>
-      <PageHero
+      <PageHero 
         eyebrow="For Partners"
         title="Partner with Curehub to Deliver the Next Generation of Wellness Genomics"
         description="AI-powered genetic & methylation-based wellness insights for enterprises, clinics, and consumer health brands — without medical diagnosis or regulatory overreach."
+        background="/images/IMG_3490.jpeg"
       />
       <PartnershipPaths />
-      <CorporateWellness />
       <ClinicsLabs />
       <ContactSection />
     </>

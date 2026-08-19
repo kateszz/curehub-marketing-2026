@@ -17,7 +17,7 @@ const ABOUT_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink text-snow">
+    <footer className="relative overflow-hidden bg-brand-500 text-snow">
       <Container className="relative z-10 flex flex-col gap-fluid-4xl py-section-md">
         <p className="text-h5 max-w-md">Building the future of healthcare, with love.</p>
 
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t border-snow/10 pt-fluid-xl text-body-sm text-snow/50">
+        <div className="flex items-center justify-between pt-fluid-xl text-body-sm text-snow/50">
           <span>Copyright © {new Date().getFullYear()}</span>
         </div>
       </Container>
@@ -53,9 +53,9 @@ export function Footer() {
         src="/images/logotype-snow.svg"
         alt=""
         aria-hidden="true"
-        width={800}
-        height={200}
-        className="pointer-events-none absolute -bottom-10 left-1/2 w-[140%] max-w-none -translate-x-1/2 opacity-[0.04]"
+        width={1000}
+        height={300}
+        className="pointer-events-none absolute -bottom-55 left-1/2 w-[101%] max-w-none -translate-x-1/2 opacity-[0.9] h-full"
       />
     </footer>
   );

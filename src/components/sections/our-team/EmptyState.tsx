@@ -8,8 +8,8 @@ import { Reveal } from "@/components/ui/Reveal";
 export function EmptyState({ message }: { message: string }) {
   return (
     <Reveal>
-      <div className="flex flex-col items-center gap-fluid-md rounded-md border border-dashed border-ink/15 bg-white/40 px-fluid-xl py-fluid-3xl text-center">
-        <p className="text-body-lg text-ink/60">{message}</p>
+      <div className="flex flex-col items-center gap-fluid-md rounded-md border border-dashed border-snow/15 bg-snow/5 px-fluid-xl py-fluid-3xl text-center">
+        <p className="text-body-lg text-snow/60">{message}</p>
       </div>
     </Reveal>
   );

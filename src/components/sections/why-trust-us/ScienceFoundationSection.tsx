@@ -113,17 +113,33 @@ export function ScienceFoundationSection() {
     <section className="bg-ink py-section-md text-snow">
       <Container className="flex flex-col gap-fluid-4xl">
         <div className="flex flex-col gap-fluid-lg">
-          <Reveal>
-            <Eyebrow className="border-snow/20 text-glow">Peer-Reviewed Science</Eyebrow>
-          </Reveal>
+         
           <Reveal delay={0.08}>
             <h2 className="text-h2 max-w-3xl">Our Scientific Foundation</h2>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="text-body-lg max-w-2xl text-snow/70">
-              Backed by 10,000+ Peer-Reviewed Studies, and a globally recognized
-              research team in epigenetics and gene editing.
-            </p>
+            <div className="relative w-full">
+              <div className="absolute top-0 left-0 rounded-full blur-3xl bg-brand-500 w-30 h-30 z-0"></div>
+            <h3 className="text-h3 font-[100] max-w-2xl text-snow/70 z-1 relative text-left w-full">
+              
+           Science requires  <b> more</b> than one perspective
+            </h3>
+            </div>
+           
+             <div className="relative z-1 flex gap-8 mt-12">
+              <p>
+                Developing responsible AI for healthcare requires more than strong algorithms. It requires biological
+understanding, mathematical rigor, clinically meaningful data, careful validation, and the ability to
+distinguish genuine signal from misleading correlation.
+    </p>
+    <p>
+Curehub&rsquo;s active scientific background brings together internationally experienced professors,
+clinical leaders, and AI researchers across these disciplines.</p>
+<p>
+Together, they provide the expertise required to examine our research from biological,
+computational, mathematical, ophthalmological, and translational perspectives.
+</p>
+        </div>
           </Reveal>
         </div>
 
@@ -248,10 +264,10 @@ export function ScienceFoundationSection() {
           </Reveal>
           <Reveal delay={0.08}>
             <p className="text-body-lg max-w-3xl text-snow/80">
-              as Chief Scientific Officer, he leads systems-level investigations
-              into metabolism-linked epigenetic networks encompassing DNA, RNA,
-              and histone methylation, and oversees high-throughput and targeted
-              translational research programs.
+             he leads systems-level investigations into metabolism-linked epigenetic networks
+encompassing DNA, RNA, and histone methylation, and oversees high-throughput and targeted
+translational research programs. He also contributes to Research and Development as a
+Systems Biology Expert Validator.
               <br />
               <br />
               This collaboration{" "}
@@ -272,23 +288,10 @@ export function ScienceFoundationSection() {
               </Reveal>
             ))}
           </div>
-          <Reveal delay={0.1}>
-            <Button href="/our-team">Get to know the rest of our team</Button>
-          </Reveal>
+         
         </div>
 
-        {/* Methodology */}
-        <div className="flex flex-col gap-fluid-xl border-t border-snow/10 pt-fluid-4xl">
-          <Reveal>
-            <Eyebrow className="border-snow/20 text-glow">Our Methodology</Eyebrow>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="text-h2 max-w-2xl">How the science becomes your plan</h2>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <Accordion items={METHODOLOGY} />
-          </Reveal>
-        </div>
+      
       </Container>
     </section>
   );

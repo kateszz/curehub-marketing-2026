@@ -11,7 +11,7 @@ import type { Researcher } from "@/lib/sanity/types";
  */
 export function ResearchersSection({ researchers }: { researchers: Researcher[] }) {
   return (
-    <section className="bg-white/40 py-section-md">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-3xl">
         <SectionHeading
           eyebrow="Research"

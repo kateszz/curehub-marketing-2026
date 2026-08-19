@@ -89,21 +89,15 @@ const MONETISATION_MODELS = [
 export function ClinicsLabs() {
   return (
     <section id="clinics-labs" className="relative overflow-hidden bg-ink py-section-lg text-snow">
-      <Image
-        src="/images/asterisk_1.svg"
-        alt=""
-        width={220}
-        height={220}
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-10 -top-10 opacity-10"
-      />
-      <Container className="relative flex flex-col gap-fluid-4xl">
-        <Reveal>
-          <div className="flex flex-col items-center gap-fluid-sm text-center">
-            <p className="text-display font-display leading-none text-brand-300">B2B2C</p>
+       <Reveal>
+          <div className="flex flex-row items-center justify-between px-fluid-4xl gap-fluid-sm text-center bg-[url(/images/IMG_3488.webp)] bg-position-[60%] w-full h-[26vh] backdrop-opacity-25 mb-16">
+          <div className="inset-0 pointer-none absolute bg-linear-to-b from-brand-500/80 to-ink/30 -z-1"></div>
+            <p className="text-display font-display leading-none text-snow">B2B2C</p>
             <p className="text-h4">Clinics, Labs & Health Brands</p>
           </div>
         </Reveal>
+      <Container className="relative flex flex-col gap-fluid-4xl">
+       
 
         <ContentBlock title="Wellness Genomics for Patient- and Client-Facing Brands">
           <p className="text-body-lg max-w-2xl text-snow/80">

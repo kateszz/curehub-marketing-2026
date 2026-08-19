@@ -13,6 +13,12 @@ type RevealProps = {
   className?: string;
   /** Animate every time it enters the viewport instead of just once. */
   repeat?: boolean;
+  /** How much of the element must be in view before it animates in.
+   *  Keep the default for normal-sized blocks; pass "some" for anything
+   *  that can grow taller than ~3x the viewport (e.g. a whole legal
+   *  document), since a fractional threshold can never be met there and
+   *  the content would stay stuck at opacity 0. */
+  amount?: "some" | "all" | number;
 };
 
 const distance = 24;
@@ -36,6 +42,7 @@ export function Reveal({
   direction = "up",
   className,
   repeat = false,
+  amount = 0.3,
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
   const { x, y } = offsets[direction];
@@ -55,7 +62,7 @@ export function Reveal({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: !repeat, amount: 0.3 }}
+      viewport={{ once: !repeat, amount }}
       variants={variants}
     >
       {children}

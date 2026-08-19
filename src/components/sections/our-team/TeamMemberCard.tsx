@@ -3,7 +3,7 @@ import type { TeamMember } from "@/lib/sanity/types";
 
 export function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="flex h-full flex-col gap-fluid-lg rounded-md border border-ink/10 bg-white/40 p-fluid-lg">
+    <div className="flex h-full flex-col gap-fluid-lg rounded-md border border-snow/10 bg-snow/5 p-fluid-lg">
       <div className="relative aspect-square w-full overflow-hidden rounded-sm">
         <SanityImg
           image={member.image}
@@ -19,7 +19,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
           {member.position}
         </p>
         {member.description && (
-          <p className="text-body-sm text-ink/70">{member.description}</p>
+          <p className="text-body-sm text-snow/70">{member.description}</p>
         )}
       </div>
     </div>

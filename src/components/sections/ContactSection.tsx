@@ -11,7 +11,7 @@ type Audience = "Personal" | "Corporate";
 type Status = "idle" | "loading" | "success" | "error";
 
 const fieldClasses =
-  "w-full border-0 border-b border-ink/20 bg-transparent py-fluid-md text-body placeholder:text-ink/40 focus:border-brand-500 focus:outline-none";
+  "w-full border-0 border-b border-snow/20 bg-transparent py-fluid-md text-body placeholder:text-snow/40 focus:border-brand-500 focus:outline-none";
 
 /** The contact form + office details block reused at the bottom of every page. */
 export function ContactSection() {
@@ -45,7 +45,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-section-lg">
+    <section id="contact" className="py-section-lg bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="grid grid-cols-1 gap-fluid-4xl lg:grid-cols-[1.2fr_1fr]">
         <Reveal>
           <form onSubmit={handleSubmit} className="flex flex-col gap-fluid-xl">
@@ -57,13 +57,13 @@ export function ContactSection() {
                   onClick={() => setAudience(option)}
                   className={cn(
                     "flex items-center gap-fluid-sm font-display text-body-sm uppercase tracking-[0.06em] transition-colors",
-                    audience === option ? "text-brand-600" : "text-ink/50 hover:text-ink"
+                    audience === option ? "text-brand-600" : "text-snow/50 hover:text-snow"
                   )}
                 >
                   <span
                     className={cn(
                       "flex size-4 items-center justify-center rounded-full border",
-                      audience === option ? "border-brand-600" : "border-ink/30"
+                      audience === option ? "border-brand-600" : "border-snow/30"
                     )}
                   >
                     {audience === option && (
@@ -77,10 +77,10 @@ export function ContactSection() {
                 </button>
               ))}
             </div>
-            <p className="text-body-sm text-ink/60">
+            <p className="text-body-sm text-snow/60">
               *Please choose whether you&rsquo;re contacting us on behalf of a{" "}
-              <strong className="text-ink">business</strong> or{" "}
-              <strong className="text-ink">personally.</strong>
+              <strong className="text-snow">business</strong> or{" "}
+              <strong className="text-snow">personally.</strong>
             </p>
 
             <input name="name" type="text" placeholder="Your name" required className={fieldClasses} />
@@ -119,11 +119,11 @@ export function ContactSection() {
 
         <Reveal delay={0.1} direction="left" className="flex flex-col justify-between gap-fluid-4xl">
           <div className="flex flex-col gap-fluid-sm">
-            <span className="text-body-sm text-ink/50">Where we&rsquo;ll be replying from:</span>
+            <span className="text-body-sm text-snow/50">Where we&rsquo;ll be replying from:</span>
             <span className="text-h5">Curehub Headquarters, Budapest, Hungary</span>
-            <span className="text-body-sm text-ink/50">(GMT+2) Time zone</span>
+            <span className="text-body-sm text-snow/50">(GMT+2) Time zone</span>
           </div>
-          <p className="font-display text-h3 uppercase leading-none text-ink/10">
+          <p className="font-display text-h3 uppercase leading-none text-snow/10">
             Contact
             <br />
             Us

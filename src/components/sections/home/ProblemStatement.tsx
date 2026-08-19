@@ -7,7 +7,7 @@ export function ProblemStatement() {
     <section className="bg-ink py-section-md text-snow">
       <Container className="flex flex-col gap-fluid-2xl">
         <Reveal>
-          <Eyebrow className="border-snow/20 text-glow">Why We&rsquo;re Building Curehub</Eyebrow>
+          <Eyebrow className="border-snow/20 text-glow">Why We&rsquo;re Building Curehub&rsquo;s Methylation Engine</Eyebrow>
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="text-h2 max-w-3xl">

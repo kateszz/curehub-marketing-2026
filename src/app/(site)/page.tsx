@@ -12,7 +12,6 @@ export default function HomePage() {
   return (
     <>
       <VideoHero />
-      <IntroVideo />
       <ProblemStatement />
       <FocusSection />
       <SymptomsSection />

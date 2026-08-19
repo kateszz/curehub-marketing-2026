@@ -19,7 +19,7 @@ export function TeamGrid({ teamMembers }: { teamMembers: TeamMember[] }) {
   })).filter((group) => group.members.length > 0);
 
   return (
-    <section id="team" className="py-section-md">
+    <section id="team" className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-3xl">
         <SectionHeading eyebrow="The People" title="Our Team" />
 

@@ -36,7 +36,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "rounded-full border border-snow/40 bg-brand-500 bg-[radial-gradient(circle_farthest-corner_at_0%_50%,color-mix(in_srgb,var(--color-ink)_20%,transparent),var(--color-brand-600)_83%,var(--color-brand-500))] px-fluid-xl py-fluid-md text-snow shadow-[0_8px_30px_-8px_var(--color-brand-700)] backdrop-blur-sm hover:border-snow/70",
+    "border border-snow/10 bg-brand-500 bg-[radial-gradient(circle_farthest-corner_at_0%_50%,color-mix(in_srgb,var(--color-ink)_20%,transparent),var(--color-brand-600)_83%,var(--color-brand-500))] px-fluid-xl py-fluid-md text-snow shadow-[0_8px_30px_-8px_var(--color-brand-700)] backdrop-blur-sm hover:border-snow/70",
   text: "text-ink hover:text-brand-600 border-b border-current pb-1",
 };
 

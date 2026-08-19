@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function OperationsSection() {
   return (
-    <section className="py-section-md">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col gap-fluid-2xl">
         <Reveal>
           <Eyebrow>Our Operations</Eyebrow>

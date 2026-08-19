@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
  */
 export function LegalHeader({ title }: { title: string }) {
   return (
-    <section className="pt-section-top pb-section-sm">
+    <section className="pt-section-top pb-section-sm bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container>
         <Reveal>
           <h1 className="text-h2">{title}</h1>
@@ -24,9 +24,9 @@ export function LegalHeader({ title }: { title: string }) {
 /** Narrow, readable single-column wrapper for long-form legal body copy. */
 export function LegalBody({ children }: { children: ReactNode }) {
   return (
-    <section className="pb-section-lg">
+    <section className="pb-section-lg bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container>
-        <Reveal className="mx-auto flex max-w-3xl flex-col gap-fluid-3xl">
+        <Reveal amount="some" className="mx-auto flex max-w-3xl flex-col gap-fluid-3xl">
           {children}
         </Reveal>
       </Container>
@@ -48,7 +48,7 @@ export function LegalSection({
 }) {
   const Heading = level;
   return (
-    <div className={cn("flex flex-col gap-fluid-lg", className)}>
+    <div className={cn("flex flex-col gap-fluid-lg pt-8", className)}>
       {heading && (
         <Heading className={level === "h4" ? "text-h4" : "text-h5"}>{heading}</Heading>
       )}
@@ -69,7 +69,7 @@ export function LegalList({
   return (
     <ListTag
       className={cn(
-        "flex flex-col gap-fluid-sm pl-fluid-lg text-body text-ink/80",
+        "flex flex-col gap-fluid-sm pl-fluid-lg text-body text-snow/80",
         ordered ? "list-decimal" : "list-disc"
       )}
     >

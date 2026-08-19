@@ -29,7 +29,7 @@ export function SymptomsSection() {
         <div className="grid grid-cols-1 gap-fluid-lg sm:grid-cols-2 lg:grid-cols-4">
           {SYMPTOMS.map((symptom, i) => (
             <Reveal key={symptom} delay={i * 0.06}>
-              <div className="relative h-full overflow-hidden rounded-md border border-snow/10 bg-gradient-to-br from-brand-700/40 via-ink to-ink p-fluid-xl">
+              <div className="relative h-full overflow-hidden border bg-gradient-to-br from-brand-700/40 via-ink to-ink p-fluid-xl">
                 <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-brand-500/30 blur-2xl" />
                 <p className="text-h5 relative font-medium">{symptom}</p>
               </div>
@@ -44,7 +44,7 @@ export function SymptomsSection() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-x-fluid-3xl gap-y-fluid-lg text-right sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-fluid-3xl gap-y-fluid-lg text-right sm:grid-cols-1">
           {CONDITIONS.map((condition, i) => (
             <Reveal key={condition} delay={i * 0.05} direction="left">
               <p className="text-body-lg border-b border-snow/10 pb-fluid-lg text-snow/80">

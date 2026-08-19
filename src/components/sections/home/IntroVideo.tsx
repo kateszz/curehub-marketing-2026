@@ -27,7 +27,7 @@ export function IntroVideo({ src = "/videos/explainer.mp4" }: { src?: string }) 
   }
 
   return (
-    <section className="py-section-md">
+    <section className="py-section-md bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
       <Container className="flex flex-col items-center gap-fluid-3xl text-center">
         <Reveal>
           <h2 className="text-h2 max-w-2xl">
