@@ -4,10 +4,8 @@ export type SanityImage = Image & { alt?: string };
 
 export type TeamCategory =
   | "leadership"
-  | "science"
-  | "engineering"
-  | "operations"
-  | "advisors";
+  | "research"
+  | "development";
 
 export type TeamMember = {
   _id: string;
@@ -19,12 +17,14 @@ export type TeamMember = {
   image: SanityImage;
 };
 
+// Keys must match the `teamCategory` option values in the Studio schema
+// (src/sanity/schemaTypes/teamMember.ts) — TeamGrid derives both its group
+// order and its headings from this map, and silently drops members whose
+// stored category isn't a key here.
 export const TEAM_CATEGORY_LABELS: Record<TeamCategory, string> = {
   leadership: "Leadership",
-  science: "Science & Research",
-  engineering: "Product & Engineering",
-  operations: "Operations & Growth",
-  advisors: "Advisors",
+  research: "Research Team",
+  development: "Development Team",
 };
 
 export type Researcher = {

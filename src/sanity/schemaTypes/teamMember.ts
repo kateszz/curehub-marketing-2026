@@ -48,10 +48,8 @@ export const teamMember = defineType({
       options: {
         list: [
           { title: "Leadership", value: "leadership" },
-          { title: "Science & Research", value: "science" },
-          { title: "Product & Engineering", value: "engineering" },
-          { title: "Operations & Growth", value: "operations" },
-          { title: "Advisors", value: "advisors" },
+          { title: "Research Team", value: "research" },
+          { title: "Development Team", value: "development" }
         ],
         layout: "dropdown",
       },
