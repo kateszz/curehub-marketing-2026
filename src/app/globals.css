@@ -96,6 +96,8 @@
 
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    overscroll-behavior: none;
   }
 
   body {
