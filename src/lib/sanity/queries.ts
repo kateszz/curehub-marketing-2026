@@ -16,6 +16,9 @@ export const researchersQuery = groq`
   *[_type == "researcher"] | order(name asc) {
     _id,
     name,
+    slug,
+    ranking,
+    disciplines,
     academicTitle,
     background,
     keyAchievements,

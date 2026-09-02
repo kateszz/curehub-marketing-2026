@@ -133,3 +133,51 @@
     padding-inline: var(--spacing-gutter);
   }
 }
+
+@layer components {
+  /* Gateway entry animation.
+
+     Deliberately CSS, not Framer Motion: the gateway is the very first thing
+     a visitor sees, and a JS-driven `initial={{ opacity: 0 }}` ships the
+     server-rendered markup with opacity:0 baked in — so the whole overlay
+     stays blank until React hydrates. On a phone that's a visibly empty
+     screen (and a permanently empty one if the bundle fails). These
+     keyframes paint on the first frame instead, with no JS involved. */
+  @keyframes gateway-enter {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes gateway-glow-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .gateway-enter {
+    animation: gateway-enter 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  }
+
+  /* Fade only — these wrappers hand their transform over to the floating
+     animation inside them. */
+  .gateway-glow-in {
+    animation: gateway-glow-in 1.6s ease-out both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gateway-enter,
+    .gateway-glow-in {
+      animation-duration: 0.01ms;
+      animation-delay: 0ms !important;
+    }
+  }
+}

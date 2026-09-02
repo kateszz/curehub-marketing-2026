@@ -126,7 +126,10 @@ export function ScienceFoundationSection() {
             </h3>
             </div>
            
-             <div className="relative z-1 flex gap-8 mt-12">
+             {/* Stacks below md: three columns of body copy cannot shrink
+                 below their min-content width, so on a phone this row used
+                 to push the page ~85px wider than the viewport. */}
+             <div className="relative z-1 mt-12 flex flex-col gap-fluid-lg md:flex-row md:gap-8">
               <p>
                 Developing responsible AI for healthcare requires more than strong algorithms. It requires biological
 understanding, mathematical rigor, clinically meaningful data, careful validation, and the ability to
@@ -143,8 +146,9 @@ computational, mathematical, ophthalmological, and translational perspectives.
           </Reveal>
         </div>
 
-        {/* Dr. Sándor Spisák */}
-        <div className="flex flex-col gap-fluid-2xl">
+        {/* Dr. Sándor Spisák — the id lets the Our Team page deep-link
+            straight to this profile (/why-trust-us#sandor-spisak). */}
+        <div id="sandor-spisak" className="flex scroll-mt-32 flex-col gap-fluid-2xl">
           <Reveal>
             <h3 className="text-h3">Dr. Sándor Spisák</h3>
           </Reveal>

@@ -11,6 +11,7 @@ import { useGateway } from "@/components/providers/GatewayProvider";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/our-product", label: "Our Product" },
+  { href: "/research-and-development", label: "R&D" },
   { href: "/why-trust-us", label: "Why Trust Us" },
   { href: "/our-team", label: "Our Team" },
   { href: "/for-partners", label: "For Partners" },

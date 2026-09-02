@@ -25,8 +25,8 @@ export function MarketApproach() {
         <div className="mt-fluid-lg grid grid-cols-1 gap-fluid-3xl md:grid-cols-2 md:gap-fluid-4xl">
           <Reveal>
             <div className="flex h-full flex-col gap-fluid-lg">
-              <span className="font-display text-h5 text-brand-500">B2C</span>
-              <p className="text-body-lg text-snow/80">
+              <span className="font-display text-h3 text-brand-500">B2C</span>
+              <p className="text-body-sm text-snow/80">
                 Empowering individuals with personalized wellness insights and
                 lifestyle guidance. Helping users better understand their
                 biology and support everyday wellbeing.
@@ -38,8 +38,8 @@ export function MarketApproach() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex h-full flex-col gap-fluid-lg border-t border-snow/10 pt-fluid-3xl md:border-l md:border-t-0 md:pl-fluid-4xl md:pt-0">
-              <span className="font-display text-h5 text-brand-500">B2B</span>
-              <p className="text-body-lg text-snow/80">
+              <span className="font-display text-h3 text-brand-500">B2B</span>
+              <p className="text-body-sm text-snow/80">
                 Providing organizations and wellness-focused partners with our
                 advanced tool to deliver personalized, science-backed wellness
                 insights and improve user engagement through data-driven

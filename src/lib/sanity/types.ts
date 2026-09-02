@@ -30,6 +30,14 @@ export const TEAM_CATEGORY_LABELS: Record<TeamCategory, string> = {
 export type Researcher = {
   _id: string;
   name: string;
+  /** Optional anchor id. Derived from `name` when unset — see
+   *  `researcherSlug` in src/lib/researchers.ts. */
+  slug?: { current?: string };
+  /** Optional display order on Why Trust Us; lower comes first. */
+  ranking?: number;
+  /** Optional short discipline label shown above the name. */
+  disciplines?: string;
+  /** Current positions in full, several joined with "·". */
   academicTitle: string;
   background: string;
   keyAchievements?: string[];

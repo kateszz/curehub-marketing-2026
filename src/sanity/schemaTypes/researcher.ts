@@ -14,10 +14,33 @@ export const researcher = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "academicTitle",
-      title: "Academic title",
+      name: "slug",
+      title: "Anchor / URL id",
+      type: "slug",
+      description:
+        "Used as the #anchor on Why Trust Us, e.g. \"andras-hajdu\" gives /why-trust-us#andras-hajdu. Leave empty to derive it from the name.",
+      options: { source: "name", maxLength: 60 },
+    }),
+    defineField({
+      name: "ranking",
+      title: "Order",
+      type: "number",
+      description:
+        "Lower numbers appear first on Why Trust Us. Leave empty to use the default order.",
+    }),
+    defineField({
+      name: "disciplines",
+      title: "Disciplines label",
       type: "string",
-      description: "e.g. \"PhD in Molecular Genetics, Stanford University\".",
+      description:
+        "Short label shown above the name, e.g. \"AI \u00b7 Data Science \u00b7 Medical Image Analysis\".",
+    }),
+    defineField({
+      name: "academicTitle",
+      title: "Academic title / positions",
+      type: "string",
+      description:
+        "Current positions in full. Separate several with \u00b7 \u2014 each one is highlighted on its own line on Why Trust Us.",
       validation: (rule) => rule.required(),
     }),
     defineField({

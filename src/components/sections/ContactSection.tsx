@@ -11,7 +11,7 @@ type Audience = "Personal" | "Corporate";
 type Status = "idle" | "loading" | "success" | "error";
 
 const fieldClasses =
-  "w-full border-0 border-b border-snow/20 bg-transparent py-fluid-md text-body placeholder:text-snow/40 focus:border-brand-500 focus:outline-none";
+  "w-full border-0 border-b border-snow/20 bg-transparent py-fluid-md text-body placeholder:text-snow/80 focus:border-glow focus:outline-none";
 
 /** The contact form + office details block reused at the bottom of every page. */
 export function ContactSection() {
@@ -45,7 +45,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-section-lg bg-radial-[at_80%_95%] from-brand-500 to-ink to-90% text-snow">
+    <section id="contact" className="py-section-lg bg-radial-[at_80%_95%] from-glow to-brand-500 to-90% text-snow">
       <Container className="grid grid-cols-1 gap-fluid-4xl lg:grid-cols-[1.2fr_1fr]">
         <Reveal>
           <form onSubmit={handleSubmit} className="flex flex-col gap-fluid-xl">
@@ -57,19 +57,19 @@ export function ContactSection() {
                   onClick={() => setAudience(option)}
                   className={cn(
                     "flex items-center gap-fluid-sm font-display text-body-sm uppercase tracking-[0.06em] transition-colors",
-                    audience === option ? "text-brand-600" : "text-snow/50 hover:text-snow"
+                    audience === option ? "text-snow" : "text-snow/50 hover:text-snow"
                   )}
                 >
                   <span
                     className={cn(
                       "flex size-4 items-center justify-center rounded-full border",
-                      audience === option ? "border-brand-600" : "border-snow/30"
+                      audience === option ? "border-glow" : "border-snow/30"
                     )}
                   >
                     {audience === option && (
                       <motion.span
                         layoutId="audience-dot"
-                        className="size-2 rounded-full bg-brand-600"
+                        className="size-2 rounded-full bg-glow"
                       />
                     )}
                   </span>
@@ -77,7 +77,7 @@ export function ContactSection() {
                 </button>
               ))}
             </div>
-            <p className="text-body-sm text-snow/60">
+            <p className="text-body-sm text-snow/90">
               *Please choose whether you&rsquo;re contacting us on behalf of a{" "}
               <strong className="text-snow">business</strong> or{" "}
               <strong className="text-snow">personally.</strong>
@@ -123,11 +123,7 @@ export function ContactSection() {
             <span className="text-h5">Curehub Headquarters, Budapest, Hungary</span>
             <span className="text-body-sm text-snow/50">(GMT+2) Time zone</span>
           </div>
-          <p className="font-display text-h3 uppercase leading-none text-snow/10">
-            Contact
-            <br />
-            Us
-          </p>
+         
         </Reveal>
       </Container>
     </section>
