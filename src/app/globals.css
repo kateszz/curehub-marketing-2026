@@ -181,3 +181,68 @@
     }
   }
 }
+
+@layer components {
+  /* Our Team card reveal — the profile copy / CTA that belongs to a
+     portrait.
+
+     One element, two layouts. Where the visitor can actually hover, it
+     becomes an overlay sitting on top of the portrait and fades in on
+     hover or keyboard focus. On a touch device there is no hover to
+     discover it with, so it simply stays in normal flow underneath the
+     card instead — that is the tap equivalent, and it needs no tap at all.
+
+     Deliberately ONE element rather than a hover copy plus a mobile copy:
+     duplicating it would make every screen reader read each profile twice.
+     Only layout, background and opacity live here; text colour stays in
+     the JSX so the utility classes keep winning the cascade.
+
+     The parent must be `.group` and the direct parent of this element, and
+     it sets `--card-aspect` to match its own portrait (default 4:5). */
+  .card-reveal {
+    margin-top: var(--spacing-fluid-md);
+  }
+
+  /* `min-width` as well as `hover`: below the `sm` breakpoint the cards
+     lay their portrait out beside the name instead of above it, so an
+     overlay pinned to the top of the card would no longer line up with the
+     photo. A desktop window dragged that narrow gets the in-flow layout,
+     same as a phone. */
+  @media (hover: hover) and (pointer: fine) and (min-width: 40rem) {
+    .card-reveal {
+      position: absolute;
+      inset-inline: 0;
+      top: 0;
+      z-index: 1;
+      margin-top: 0;
+      display: flex;
+      aspect-ratio: var(--card-aspect, 0.8);
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: var(--spacing-fluid-md);
+      overflow: hidden auto;
+      border-radius: var(--radius-md);
+      background-image: linear-gradient(
+        to top,
+        var(--color-ink) 0%,
+        color-mix(in srgb, var(--color-ink) 92%, transparent) 45%,
+        color-mix(in srgb, var(--color-ink) 55%, transparent) 100%
+      );
+      padding: var(--spacing-fluid-lg);
+      opacity: 0;
+      transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .group:hover > .card-reveal,
+    .group:focus-visible > .card-reveal,
+    .group:focus-within > .card-reveal {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-reveal {
+        transition: none;
+      }
+    }
+  }
+}

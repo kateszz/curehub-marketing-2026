@@ -18,6 +18,7 @@ export default function OurProductPage() {
       <PageHero
         eyebrow="Our Product"
         title="A Clear, Actionable Map of Your Biology"
+        background="/images/human-bg.png"
         description={
           <>
             Curehub transforms <strong className="text-snow">complex genetic</strong> and

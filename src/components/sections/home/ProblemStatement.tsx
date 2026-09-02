@@ -4,8 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ProblemStatement() {
   return (
-    <section className="bg-ink py-section-md text-snow">
-      <Container className="flex flex-col gap-fluid-2xl">
+    <section className="bg-ink py-section-md text-snow relative">
+      <div className="absolute z-0 top-0 right-0 h-full w-[50%] bg-cover bg-[url(/images/human-bg.png)] opacity-20"></div>
+      <Container className="relative flex flex-col gap-fluid-2xl z-1">
         <Reveal>
           <Eyebrow className="border-snow/20 text-glow">Why We&rsquo;re Building Curehub&rsquo;s Methylation Engine</Eyebrow>
         </Reveal>

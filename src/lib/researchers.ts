@@ -15,13 +15,13 @@ import type { Researcher } from "@/lib/sanity/types";
  *  letters (Drexler, Professzor…) are left alone. */
 const HONORIFICS = /\b(?:prof|dr|assoc|assist|mr|mrs|ms)\.\s*/gi;
 
-/** Anchor id for a profile — `#andras-hajdu` for "Prof. Dr. András Hajdu",
- *  `#adrienne-csutak` for "Prof. Dr. Adrienne Csutak, MD, PhD, DSc, MSc". */
-export function researcherSlug(researcher: Researcher): string {
-  if (researcher.slug?.current) return researcher.slug.current;
-
+/** Anchor id for a person's name — `andras-hajdu` for "Prof. Dr. András
+ *  Hajdu", `adrienne-csutak` for "Prof. Dr. Adrienne Csutak, MD, PhD, DSc,
+ *  MSc". Shared with the Our Team cards, which deep-link into these
+ *  profiles with only a `teamMember` name to work from. */
+export function personSlug(name: string): string {
   return (
-    researcher.name
+    name
       // post-nominals (", PhD, DSc") are a title, not a name
       .split(",")[0]
       .replace(HONORIFICS, "")
@@ -32,6 +32,12 @@ export function researcherSlug(researcher: Researcher): string {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "")
   );
+}
+
+/** Anchor id for a researcher profile — the Studio `slug` field where an
+ *  editor has set one, otherwise derived from the name. */
+export function researcherSlug(researcher: Researcher): string {
+  return researcher.slug?.current || personSlug(researcher.name);
 }
 
 /** The narrative order the page is specified to run in: AI → mathematics →

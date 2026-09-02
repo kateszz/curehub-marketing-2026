@@ -27,7 +27,7 @@ export default function ResearchAndDevelopmentPage() {
     <>
       <PageHero
         eyebrow="Research & Development"
-        background="/images/blue-dark-mesh.svg"
+        background="/images/retina.jpg"
         title="Researching AI Models for Non-Invasive Clinical Decision Support"
         description={
           <>

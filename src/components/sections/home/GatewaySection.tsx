@@ -229,7 +229,7 @@ function OptionArea({
         <p
           style={delay(enterDelay)}
           className={cn(
-            "gateway-enter font-display text-body-sm uppercase tracking-[0.06em] text-snow/70",
+            "gateway-enter font-display text-body-sm max-md:text-[24px] uppercase tracking-[0.06em] text-snow/70",
             textAlign,
           )}
         >
@@ -246,7 +246,7 @@ function OptionArea({
           <p
             style={delay(enterDelay + 0.08)}
             className={cn(
-              "gateway-enter w-[30ch] max-w-full text-sm font-extralight text-snow",
+              "gateway-enter w-[30ch] max-w-full text-sm max-md:text-[12px] font-extralight text-snow",
               textAlign,
             )}
           >
@@ -301,24 +301,24 @@ export function GatewaySection() {
             still={!!shouldReduceMotion}
           />
 
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col items-center gap-fluid-lg">
             <h1
               style={delay(0.05)}
-              className="gateway-enter text-h1 text-center text-snow"
+              className="gateway-enter text-h1 text-center text-snow max-md:text-h2"
             >
               <span className="font-light text-snow/70">The </span>Future
               <span className="font-light text-snow/70"> of</span> Biointelligence
             </h1>
             <p
               style={delay(0.15)}
-              className="gateway-enter text-center font-extralight text-snow"
+              className="gateway-enter text-center font-extralight max-md:font-light w-[25ch] text-snow/90 max-md:text-[12px]"
             >
-              Understanding the human body from signals we could never fully
+              <b>Understanding the human body </b>from signals we could never fully
               interpret before.
             </p>
           </div>
 
-          <div className="relative z-10 flex w-full flex-col items-start gap-fluid-2xl md:w-auto md:flex-row md:items-start md:gap-fluid-3xl">
+          <div className="relative z-10 flex w-full flex-col items-start gap-fluid-sm md:w-auto md:flex-row md:items-start md:gap-fluid-3xl">
             <OptionArea
               side="left"
               category="Genomic Biointelligence"

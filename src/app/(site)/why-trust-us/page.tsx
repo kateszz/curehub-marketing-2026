@@ -37,6 +37,7 @@ export default async function WhyTrustUsPage() {
     <div className="overflow-x-clip">
       <PageHero
         eyebrow="Why Trust Us"
+        background="/images/dna-bg.png"
         title={
           <>
             <span className="text-glow">Trust</span> Begins With <i>Scientific Rigor</i>

@@ -23,7 +23,7 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-ink pb-section-md pt-section-top text-snow">
       <div
-        className="pointer-events-none absolute inset-0 opacity-40"
+        className="pointer-events-none absolute inset-0 opacity-30"
         style={{ backgroundImage: background ? `url(${background})` : "url(/images/blue-snow-mesh.svg)", backgroundSize: "cover" }}
         aria-hidden="true"
       />

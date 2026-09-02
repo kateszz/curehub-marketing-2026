@@ -2,7 +2,6 @@ import { type Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { PartnershipPaths } from "@/components/sections/for-partners/PartnershipPaths";
-import { CorporateWellness } from "@/components/sections/for-partners/CorporateWellness";
 import { ClinicsLabs } from "@/components/sections/for-partners/ClinicsLabs";
 
 export const metadata: Metadata = {
