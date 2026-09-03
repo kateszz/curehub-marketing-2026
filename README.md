@@ -102,8 +102,22 @@ DESIGN_SYSTEM.md          design token reference — read this first
   site posted straight to Sender.net from the browser with an API bearer
   token hard-coded in client-side JS (visible in the page source). That's
   not safe to carry over, so this route accepts the submission server-side
-  and currently just logs it — wire up your real email/CRM provider there
-  (the TODO comment in the file shows where). **If that Sender.net token is
+  and emails it via [Resend](https://resend.com) to
+  `mark.erdelyi@curehub.eu`. To make it work you need, as server-only env
+  vars (no `NEXT_PUBLIC_` prefix — in `.env.local` locally, and in the host's
+  environment settings once deployed):
+
+  ```
+  RESEND_API_KEY=re_...              # required, from resend.com → API Keys
+  CONTACT_TO_EMAIL=...               # optional, overrides the recipient
+  CONTACT_FROM_EMAIL=...             # optional, sender; domain must be verified in Resend
+  ```
+
+  Until `curehub.eu` is verified in Resend, the default sender
+  (`onboarding@resend.dev`) only delivers to the address that owns the
+  Resend account — verify the domain and set `CONTACT_FROM_EMAIL` to
+  something like `Curehub Website <website@curehub.eu>` for real delivery.
+  Replies go to whoever filled in the form. **If that Sender.net token is
   still live, rotate/revoke it** — it was exposed in the public Webflow
   export.
 - **Homepage explainer video** (`src/components/sections/home/IntroVideo.tsx`)
