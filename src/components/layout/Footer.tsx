@@ -18,7 +18,7 @@ const ABOUT_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-brand-500 text-snow">
+    <footer className="relative overflow-hidden bg-brand-500 text-snow pb-24">
       <Container className="relative z-10 flex flex-col gap-fluid-4xl py-section-md">
         <p className="text-h5 max-w-md">Building the future of healthcare, with love.</p>
 
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-fluid-xl text-body-sm text-snow/50">
+        <div className="flex items-center justify-between pt-fluid-sm text-body-sm text-snow/50">
           <span>Copyright © {new Date().getFullYear()}</span>
         </div>
       </Container>
@@ -56,8 +56,10 @@ export function Footer() {
         aria-hidden="true"
         width={1000}
         height={300}
-        className="pointer-events-none absolute -bottom-55 left-1/2 w-[101%] max-w-none -translate-x-1/2 opacity-[0.9] h-full"
+        className="pointer-events-none w-[101%] max-w-none translate-y-24 opacity-[0.9] h-full"
       />
+      
     </footer>
+
   );
 }

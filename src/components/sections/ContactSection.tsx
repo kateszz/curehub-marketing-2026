@@ -45,8 +45,11 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-section-lg bg-radial-[at_80%_95%] from-glow to-brand-500 to-90% text-snow">
-      <Container className="grid grid-cols-1 gap-fluid-4xl lg:grid-cols-[1.2fr_1fr]">
+    <section id="contact" className="relative py-section-lg bg-radial-[at_80%_95%] from-glow to-brand-500 to-90% text-snow overflow-hidden flex flex-col items-center">
+      <div>
+        <span className="text-[12rem] z-0 max-md:text-[6rem]">CONTACT US</span>
+      </div>
+      <Container className="grid grid-cols-1 gap-fluid-4xl lg:grid-cols-[1.2fr_1fr] backdrop-blur-xl bg-ink/10 relative z-1 py-11 px-8 mt-[-5%]">
         <Reveal>
           <form onSubmit={handleSubmit} className="flex flex-col gap-fluid-xl">
             <div className="flex gap-fluid-lg">
