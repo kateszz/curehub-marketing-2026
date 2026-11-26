@@ -28,22 +28,12 @@ export default function ResearchAndDevelopmentPage() {
       <PageHero
         eyebrow="Research & Development"
         background="/images/retina.jpg"
-        title="Researching AI Models for Non-Invasive Clinical Decision Support"
-        description={
-          <>
-            <span className="block">
-              We are developing a new generation of AI models designed to extract
-              clinically relevant insights from retinal imaging, supporting
-              earlier investigation, more informed clinical decisions, and more
-              accessible assessment of systemic health.
-            </span>
-            <span className="mt-fluid-lg block text-snow">
-              Our long-term goal is to help transform a fast, safe, and routinely
-              available image of the eye into a non-invasive clinical
-              decision-support signal.
-            </span>
-          </>
+        title={
+          <span className="block max-sm:text-[length:min(9vw,var(--text-h1))] max-sm:tracking-[-0.02em]">
+            Pioneering the next generation of Biointelligence.
+          </span>
         }
+        description="Research & Development"
       />
       <ApproachSection />
       <ResearchStrengthSection />

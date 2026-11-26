@@ -2,22 +2,11 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
-const WORK_INCLUDES = [
-  "Retinal-image preparation, harmonisation, and quality control",
-  "AI-based representation learning and image analysis",
-  "Controlled signal-recovery experiments",
-  "Negative controls and artifact detection",
-  "Cross-device and cross-dataset validation",
-  "Explainability and uncertainty analysis",
-  "Preparation for validation with real clinical and laboratory data",
-];
-
-const OUTCOME_ESTABLISHES = [
-  "A meaningful signal can be detected",
-  "Which retinal features and model architectures carry the strongest information",
-  "Whether results remain stable across datasets, devices, and patient groups",
-  "Which confounding factors must be controlled",
-  "What clinical data are required for real-world biological validation",
+const WORKING_TOWARDS = [
+  "A deeper understanding of individual biological health.",
+  "Non-invasive assessment of systemic biological processes.",
+  "Earlier recognition of potentially meaningful biological changes.",
+  "More accessible and personalised preventive healthcare.",
 ];
 
 function List({ items }: { items: string[] }) {
@@ -37,43 +26,36 @@ function List({ items }: { items: string[] }) {
   );
 }
 
-/** Section 4 — Curehub Ocular AI, the technical centrepiece of the page. */
+/** Section 4 — Curehub Ocular AI, the flagship vision of the page. */
 export function FlagshipSection() {
   return (
     <section className="bg-ink py-section-md text-snow">
       <Container className="flex flex-col gap-fluid-4xl">
         <div className="flex flex-col gap-fluid-lg">
           <Reveal>
-            <Eyebrow>Flagship Research</Eyebrow>
+            <Eyebrow tone="snow">Flagship Research</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="text-h2">Curehub Ocular AI</h2>
           </Reveal>
-          <Reveal delay={0.16}>
-            <p className="text-body-lg max-w-3xl text-snow/70">
-              Curehub Ocular AI is our flagship research program exploring
-              whether retinal images contain reproducible patterns associated
-              with systemic microvascular and metabolic states.
-            </p>
-          </Reveal>
         </div>
 
-        {/* The research question gets its own treatment — it is the question
-            the entire program is built to answer, not body copy. */}
+        {/* The vision statement gets its own treatment — it is the future
+            the entire program is working towards, not body copy. */}
         <Reveal delay={0.1} direction="none">
-          <figure className="relative overflow-hidden rounded-md border border-glow/30 bg-gradient-to-br from-brand-700/50 via-ink to-ink p-fluid-2xl md:p-fluid-4xl">
+          <figure className="relative overflow-hidden rounded-md border border-glow/30 bg-gradient-to-br from-brand-700/50 via-ink to-ink p-fluid-lg sm:p-fluid-2xl md:p-fluid-4xl">
             <div
               className="pointer-events-none absolute -left-10 top-1/2 size-60 -translate-y-1/2 rounded-full bg-brand-500/30 blur-3xl"
               aria-hidden="true"
             />
             <figcaption className="relative font-display text-body-sm uppercase tracking-[0.08em] text-glow">
-              The research question
+              Our Vision
             </figcaption>
-            <blockquote className="text-h3 relative mt-fluid-xl max-w-4xl font-light">
-              Can AI identify biologically meaningful systemic signals within
-              retinal images, and distinguish those signals from age, image
-              quality, device differences, existing ocular conditions, and other
-              confounding factors?
+            <blockquote className="text-h3 relative mt-fluid-xl max-w-4xl font-light max-md:mt-fluid-md max-md:text-h4 max-md:leading-[1.2]">
+              Imagine a future where a simple image of the eye could help us
+              understand what is happening throughout the human body —
+              potentially revealing early biological changes before they become
+              clinically apparent.
             </blockquote>
           </figure>
         </Reveal>
@@ -81,54 +63,34 @@ export function FlagshipSection() {
         <div className="grid grid-cols-1 gap-fluid-4xl lg:grid-cols-2">
           <div className="flex flex-col gap-fluid-xl">
             <Reveal>
-              <h3 className="text-h4">What we are developing</h3>
+              <p className="text-h5 max-w-3xl font-light text-snow">
+                This is the future we are working towards.
+              </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="text-body-lg text-snow/70">
-                We are building and evaluating AI models that learn
-                high-dimensional representations of retinal images and test
-                whether structured microvascular and metabolic signals can be
-                recovered consistently.
+                Through Curehub Ocular AI, we are developing technologies
+                designed to explore the relationship between visible ocular
+                patterns and the body’s underlying biological processes.
               </p>
             </Reveal>
-            <div className="flex flex-col gap-fluid-md">
-              <Reveal delay={0.12}>
-                <p className="font-display text-body-sm uppercase tracking-[0.06em] text-snow/50">
-                  Our work includes
-                </p>
-              </Reveal>
-              <List items={WORK_INCLUDES} />
-            </div>
+            <Reveal delay={0.12}>
+              <p className="text-body-lg text-snow/70">
+                Our goal is to transform routinely accessible medical imaging
+                into a deeper source of personalised health intelligence,
+                supporting earlier investigation, more informed clinical
+                decisions and a more preventive approach to healthcare.
+              </p>
+            </Reveal>
           </div>
 
           <div className="flex flex-col gap-fluid-xl">
             <Reveal>
-              <h3 className="text-h4">What the research is designed to deliver</h3>
+              <h3 className="text-h4">What We Are Working Towards</h3>
             </Reveal>
-            <Reveal delay={0.08}>
-              <p className="text-body-lg text-snow/70">
-                The immediate objective is a scientifically defensible technical
-                and validation framework showing whether the underlying approach
-                is sufficiently robust to progress toward clinical-data studies.
-              </p>
-            </Reveal>
-            <div className="flex flex-col gap-fluid-md">
-              <Reveal delay={0.12}>
-                <p className="font-display text-body-sm uppercase tracking-[0.06em] text-snow/50">
-                  A successful research outcome will establish
-                </p>
-              </Reveal>
-              <List items={OUTCOME_ESTABLISHES} />
-            </div>
+            <List items={WORKING_TOWARDS} />
           </div>
         </div>
-
-        <Reveal>
-          <p className="text-h5 max-w-3xl font-light text-snow">
-            The current research is a feasibility and validation program that
-            creates the foundation for future clinical models.
-          </p>
-        </Reveal>
       </Container>
     </section>
   );
