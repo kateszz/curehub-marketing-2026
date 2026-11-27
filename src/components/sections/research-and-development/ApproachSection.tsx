@@ -1,25 +1,37 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const PARAGRAPHS = [
-  "The retina provides a uniquely accessible view of the body’s microvascular system. Subtle changes in retinal structure, vascular patterns, and tissue characteristics may reflect biological processes extending beyond the eye, including microvascular stress, metabolic imbalance, oxidative stress, and other systemic changes.",
-  "Our vision is to develop AI models capable of recognizing these complex patterns and translating them into probabilistic, clinically meaningful insights.",
-  "Retinal imaging offers several important advantages: it is non-invasive, fast, repeatable, and already used extensively across ophthalmology and screening workflows. This creates the possibility of generating additional clinical value from an existing and widely scalable form of medical imaging.",
-  "The intended role of these models is not to replace clinicians or laboratory testing. Their purpose is to support clinical decisions, helping identify when further investigation may be valuable, prioritizing confirmatory testing, and potentially enabling earlier recognition of clinically relevant biological changes.",
+const BLOCKS = [
+  {
+    title: "Making the Invisible Visible",
+    paragraphs: [
+      "The human body constantly reveals information about its internal biological state. Much of this information, however, remains beyond our ability to interpret.",
+      "At Curehub, we are bringing together artificial intelligence, biological science and medical imaging to explore new ways of understanding human health.",
+      "Our ambition is to make deeper biological insights accessible through technologies that are non-invasive, scalable and increasingly personalised.",
+    ],
+  },
+  {
+    title: "A New Window Into Human Health",
+    paragraphs: [
+      "The eye offers a remarkable opportunity to understand what is happening beyond the surface of the human body.",
+      "Its intricate network of blood vessels and biological structures may hold valuable information about our systemic health, metabolic balance and underlying biological processes.",
+      "By combining advanced artificial intelligence with retinal imaging, we are exploring how these naturally occurring signals could become a new source of meaningful health intelligence.",
+    ],
+  },
 ];
 
 const BENEFITS = [
   {
-    title: "A direct view of microvascular health",
-    body: "The retina is one of the few places where blood vessels and microvascular structures can be observed directly and non-invasively.",
+    title: "Non-Invasive by Nature",
+    body: "Exploring ways to understand internal biological processes without invasive procedures.",
   },
   {
-    title: "Accessible and repeatable",
-    body: "Retinal imaging can be performed quickly and repeatedly without invasive procedures, making it suitable for screening and longitudinal monitoring.",
+    title: "Intelligence Beyond Human Vision",
+    body: "Using artificial intelligence to uncover complex biological patterns that may otherwise remain unnoticed.",
   },
   {
-    title: "AI-readable biological complexity",
-    body: "Advanced models can analyse image patterns and relationships that may be too subtle or multidimensional for conventional visual assessment.",
+    title: "Designed for Accessibility",
+    body: "Working towards technologies that make advanced health insights available to a broader population.",
   },
 ];
 
@@ -28,18 +40,23 @@ export function ApproachSection() {
   return (
     <section className="bg-ink py-section-md text-snow">
       <Container className="flex flex-col gap-fluid-4xl">
-        <div className="grid grid-cols-1 gap-fluid-2xl lg:grid-cols-[1fr_1.1fr] lg:gap-fluid-4xl">
-          <Reveal>
-            <h2 className="text-h2 max-w-3xl">A New Window Into Systemic Health</h2>
-          </Reveal>
-          <div className="flex flex-col gap-fluid-lg">
-            {PARAGRAPHS.map((paragraph, i) => (
-              <Reveal key={paragraph.slice(0, 24)} delay={i * 0.06}>
-                <p className="text-body-lg text-snow/70">{paragraph}</p>
-              </Reveal>
-            ))}
+        {BLOCKS.map((block) => (
+          <div
+            key={block.title}
+            className="grid grid-cols-1 gap-fluid-2xl lg:grid-cols-[1fr_1.1fr] lg:gap-fluid-4xl"
+          >
+            <Reveal>
+              <h2 className="text-h2 max-w-3xl max-sm:text-h3">{block.title}</h2>
+            </Reveal>
+            <div className="flex flex-col gap-fluid-lg">
+              {block.paragraphs.map((paragraph, i) => (
+                <Reveal key={paragraph.slice(0, 24)} delay={i * 0.06}>
+                  <p className="text-body-lg text-snow/70">{paragraph}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
 
         <div className="grid grid-cols-1 gap-fluid-lg md:grid-cols-3">
           {BENEFITS.map((benefit, i) => (

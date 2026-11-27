@@ -3,31 +3,29 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
 const PARAGRAPHS = [
-  "The next phase is to connect our retinal AI models with real clinical evidence.",
-  "This requires carefully governed datasets in which retinal images can be studied alongside laboratory measurements and relevant clinical information. These paired datasets will allow us to determine whether image-derived signals correlate with real biological states and whether they provide information beyond conventional risk factors.",
-  "The initial biological focus includes pathways connected with microvascular health, one-carbon metabolism, redox balance, and oxidative stress.",
+  "Our research follows a structured, evidence-driven journey, connecting scientific discovery with meaningful clinical applications.",
 ];
 
 const STEPS = [
   {
     number: "01",
-    title: "Technical Feasibility",
-    body: "Develop robust retinal-image representations and demonstrate that the research pipeline can recover controlled signals without relying on image artifacts or dataset shortcuts.",
+    title: "Discovery",
+    body: "Exploring the biological information within ocular images and its potential relationship with systemic health.",
   },
   {
     number: "02",
-    title: "Clinical-Data Validation",
-    body: "Evaluate the models using retinal images paired with blood biomarkers, clinical metadata, and longitudinal or genomic information.",
+    title: "Intelligence",
+    body: "Developing artificial intelligence capable of recognising and interpreting complex biological patterns.",
   },
   {
     number: "03",
-    title: "Independent Validation",
-    body: "Test model performance across new clinical sites, devices, populations, and patient groups that were not involved in model development.",
+    title: "Scientific & Clinical Validation",
+    body: "Evaluating our findings against real-world clinical and biological evidence to establish reliability and scientific relevance.",
   },
   {
     number: "04",
-    title: "Clinical Decision Support",
-    body: "Develop probabilistic, uncertainty-aware outputs that help clinicians identify patients who could benefit from confirmatory laboratory testing or further investigation.",
+    title: "Real-World Application",
+    body: "Working towards accessible technologies that support healthcare professionals and empower individuals with deeper insights into their health.",
   },
 ];
 
@@ -51,8 +49,8 @@ export function DevelopmentPathSection() {
             <Eyebrow tone="snow">The Development Path</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="text-h2 max-w-4xl">
-              From Retinal Patterns to Non-Invasive Biomarker Research
+            <h2 className="text-h2 max-w-4xl max-sm:text-h3">
+              From Scientific Discovery to Real-World Impact
             </h2>
           </Reveal>
           {PARAGRAPHS.map((paragraph, i) => (
@@ -63,10 +61,6 @@ export function DevelopmentPathSection() {
         </div>
 
         <div className="flex flex-col gap-fluid-2xl">
-          <Reveal>
-            <h3 className="text-h4">Our Development Path</h3>
-          </Reveal>
-
           {/* The progression itself: a single connected track on desktop,
               a numbered stack on mobile. */}
           <ol className="relative grid grid-cols-1 gap-fluid-lg md:grid-cols-2 lg:grid-cols-4">

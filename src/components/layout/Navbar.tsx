@@ -30,7 +30,7 @@ export function Navbar() {
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="fixed inset-x-0 top-0 z-50 w-screen flex justify-center bg-ink/50 backdrop-blur-md"
+          className="fixed inset-x-0 top-0 z-50 flex justify-center bg-ink/50 backdrop-blur-md"
         >
           <div className="flex h-[var(--nav-height)] w-[var(--container-page)] items-center justify-between  pl-fluid-lg pr-fluid-lg">
             <Link
