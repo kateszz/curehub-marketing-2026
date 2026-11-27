@@ -31,9 +31,14 @@ export function GatewayProvider({ children }: { children: ReactNode }) {
   // layout starts (and stays) uncovered.
   const [gatewayIsActive, setGatewayIsActive] = useState(pathname === "/");
 
-  useEffect(() => {
+  // Reset the gateway whenever the route changes. Adjusting state during
+  // render (instead of in an effect) avoids an extra cascading render.
+  // https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setGatewayIsActive(pathname === "/");
-  }, [pathname]);
+  }
 
   // Lock the page while the gateway covers it. `scrollbar-gutter: stable` in
   // globals.css keeps this from shifting the layout underneath.
