@@ -34,7 +34,7 @@ export default function ResearchAndDevelopmentPage() {
             <span className="block">
               We are developing a new generation of AI models designed to extract
               clinically relevant insights from retinal imaging, supporting
-              earlier investigation, more informed clinical decisions, and more
+              earlier investigation, more informed clinical decisions and more
               accessible assessment of systemic health.
             </span>
             <span className="mt-fluid-lg block text-snow">
