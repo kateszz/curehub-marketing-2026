@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { SanityImg } from "@/components/ui/SanityImg";
+import { Portrait } from "@/components/ui/Portrait";
 import { ArrowUpRightIcon } from "@/components/ui/icons";
+import { resolvePortrait } from "@/lib/portrait-registry";
 import { memberDescription } from "@/lib/team";
 import type { TeamMember } from "@/lib/sanity/types";
 
@@ -36,10 +37,11 @@ export function ResearchCard({
           light on content. */}
       <div className="flex flex-1 flex-row items-start gap-fluid-lg sm:flex-col sm:gap-0">
         <div className="relative aspect-[4/5] w-[38%] shrink-0 overflow-hidden rounded-md bg-brand-900/40 sm:w-full">
-          <SanityImg
+          <Portrait
+            override={resolvePortrait(member)}
             image={member.image}
+            frame="portrait"
             fallbackAlt={`Portrait of ${member.name}`}
-            fill
             width={640}
             sizes="(min-width: 1024px) 23vw, (min-width: 640px) 45vw, 36vw"
             className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"

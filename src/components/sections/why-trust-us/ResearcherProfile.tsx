@@ -1,6 +1,7 @@
 import { Fragment, type ReactNode } from "react";
-import { SanityImg } from "@/components/ui/SanityImg";
+import { Portrait } from "@/components/ui/Portrait";
 import { Reveal } from "@/components/ui/Reveal";
+import { resolvePortrait } from "@/lib/portrait-registry";
 import { cn } from "@/lib/utils";
 import {
   researcherSlug,
@@ -142,10 +143,11 @@ export function ResearcherProfile({
                   {/* `object-top` because the supplied portraits differ in
                       aspect ratio — anything taller than 4:5 is cropped from
                       the bottom, which keeps every face in frame. */}
-                  <SanityImg
+                  <Portrait
+                    override={resolvePortrait(researcher)}
                     image={researcher.image}
+                    frame="portrait"
                     fallbackAlt={`Portrait of ${researcher.name}`}
-                    fill
                     width={720}
                     sizes="(min-width: 1024px) 42vw, 100vw"
                     className="object-cover object-top"

@@ -14,7 +14,9 @@ export type TeamMember = {
   description?: string;
   teamCategory: TeamCategory;
   ranking: number;
-  image: SanityImage;
+  /** Required in the Studio, but a published record can still lack it —
+   *  see `Portrait`, which renders an empty frame instead of throwing. */
+  image?: SanityImage | null;
 };
 
 // The values must match the `teamCategory` options in the Studio schema
@@ -37,5 +39,6 @@ export type Researcher = {
   background: string;
   keyAchievements?: string[];
   contribution?: string;
-  image: SanityImage;
+  /** See `TeamMember.image`. */
+  image?: SanityImage | null;
 };
