@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
-import { SanityImg } from "@/components/ui/SanityImg";
+import { Portrait } from "@/components/ui/Portrait";
 import { ArrowUpRightIcon } from "@/components/ui/icons";
+import { resolvePortrait } from "@/lib/portrait-registry";
 import { toParagraphs } from "@/lib/researchers";
 import { memberDescription } from "@/lib/team";
 import { cn } from "@/lib/utils";
@@ -53,10 +54,11 @@ export function ProfileCard({
           {/* `object-top` because the supplied portraits differ in aspect
               ratio — anything taller than the frame is cropped from the
               bottom, which keeps every face in shot. */}
-          <SanityImg
+          <Portrait
+            override={resolvePortrait(member)}
             image={member.image}
+            frame={square ? "square" : "portrait"}
             fallbackAlt={`Portrait of ${member.name}`}
-            fill
             width={720}
             sizes={sizes ?? "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 36vw"}
             className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"

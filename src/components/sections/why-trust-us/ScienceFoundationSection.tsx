@@ -3,6 +3,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { Portrait } from "@/components/ui/Portrait";
+import { portraitById } from "@/lib/portrait-registry";
 import { PromiseCard } from "./PromiseCard";
 import { Accordion, type AccordionItem } from "./Accordion";
 
@@ -160,10 +162,13 @@ computational, mathematical, ophthalmological, and translational perspectives.
                   Chief Scientific Officer / Co-founder
                 </span>
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md">
-                  <Image
-                    src="/images/IMG_3484-1-1.jpg"
-                    alt="Dr. Sándor Spisák, Chief Scientific Officer and Co-founder of Curehub"
-                    fill
+                  {/* Same registry entry as his Our Team card; the original
+                      file stays as the fallback when overrides are off. */}
+                  <Portrait
+                    override={portraitById("sandor-spisak")}
+                    fallbackSrc="/images/IMG_3484-1-1.jpg"
+                    fallbackAlt="Dr. Sándor Spisák, Chief Scientific Officer and Co-founder of Curehub"
+                    frame="portrait"
                     sizes="(min-width: 1024px) 40vw, 90vw"
                     className="object-cover"
                   />
