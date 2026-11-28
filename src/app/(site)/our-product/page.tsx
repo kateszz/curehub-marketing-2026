@@ -3,7 +3,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { PromiseSection } from "@/components/sections/our-product/PromiseSection";
 import { HowItWorksSection } from "@/components/sections/our-product/HowItWorksSection";
-import { ReportSection } from "@/components/sections/our-product/ReportSection";
+import { BeyondRecommendationSection } from "@/components/sections/our-product/BeyondRecommendationSection";
 import { ClosingStatement } from "@/components/sections/our-product/ClosingStatement";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function OurProductPage() {
       />
       <PromiseSection />
       <HowItWorksSection />
-      <ReportSection />
+      <BeyondRecommendationSection />
       <ClosingStatement />
       <ContactSection />
     </>
